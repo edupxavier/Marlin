@@ -9,7 +9,11 @@
 //#define E_STEPS_PER_MM ((3200 * 39.0)/(11.0 * 6.75 * 3.142))
 //
 // ABS - está quase exato
-#define E_STEPS_PER_MM ((3200 * 39.0)/(11.0 * 6.75 * 3.142) * 100.0 / 100.0)
+//#define E_STEPS_PER_MM ((3200 * 39.0)/(11.0 * 6.75 * 3.142) * 100.0 / 100.0)
+
+// em 06/2021 o hotend foi trocado
+// medido em 17/06/2021 com pla 3dx - 200oC 100mm a 60mm/m
+#define E_STEPS_PER_MM ((3200 * 39.0)/(11.0 * 6.75 * 3.142) * 100.0 / 93.0)
 //
 ///////////////////////////////////////////////////////////////////////////
 
@@ -183,7 +187,19 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 // The position of the homing switches. Use MAX_LENGTH * -0.5 if the center should be 0, 0, 0
 #define X_HOME_POS (X_MIN_POS - 1)  
 #define Y_HOME_POS (Y_MIN_POS - 1)
-#define Z_HOME_POS (203.8)    // 04/06/2021
+
+/////////////////////////////////////////////////
+//
+// hotend jhead original da impressora
+//#define Z_HOME_POS (203.8)    // 04/06/2021
+//
+// hotend com cooler 
+#define Z_HOME_POS (193.05)     // 17/06/2021
+//
+//
+//////////////////////////////////////////////////
+
+
 
 #define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS)
 #define Y_MAX_LENGTH (Y_MAX_POS - Y_MIN_POS)
