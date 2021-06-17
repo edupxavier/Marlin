@@ -1,8 +1,18 @@
 #ifndef __CONFIGURATION_H
 #define __CONFIGURATION_H
 
+
+///////////////////////////////////////////////////////////////////////////
 // Mendel90 hobbed bolt and 39:11 Wade's gears
-#define E_STEPS_PER_MM ((3200 * 39.0)/(11.0 * 6.75 * 3.142))
+//
+// default
+//#define E_STEPS_PER_MM ((3200 * 39.0)/(11.0 * 6.75 * 3.142))
+//
+// ABS - está quase exato
+#define E_STEPS_PER_MM ((3200 * 39.0)/(11.0 * 6.75 * 3.142) * 100.0 / 100.0)
+//
+///////////////////////////////////////////////////////////////////////////
+
 
 // This configurtion file contains the basic settings.
 // Advanced settings can be found in Configuration_adv.h 
@@ -14,8 +24,8 @@
 #define STRING_CONFIG_H_AUTHOR "nophead" //Who made the changes.
 
 // This determines the communication speed of the printer
-#define BAUDRATE 250000
-//#define BAUDRATE 115200
+//#define BAUDRATE 250000
+#define BAUDRATE 115200
 
 //// The following define selects which electronics board you have. Please choose the one that matches your setup
 // Gen7 custom (Alfons3 Version) = 10 "https://github.com/Alfons3/Generation_7_Electronics"
@@ -173,7 +183,7 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 // The position of the homing switches. Use MAX_LENGTH * -0.5 if the center should be 0, 0, 0
 #define X_HOME_POS (X_MIN_POS - 1)  
 #define Y_HOME_POS (Y_MIN_POS - 1)
-#define Z_HOME_POS (203.0)
+#define Z_HOME_POS (203.8)    // 04/06/2021
 
 #define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS)
 #define Y_MAX_LENGTH (Y_MAX_POS - Y_MIN_POS)
